@@ -1,21 +1,16 @@
 <script setup lang="ts">
 const { links, toggleDropdown } = useSidebarUtils();
 defineProps<{ nav: boolean }>();
+const { signOut } = useAuth();
 </script>
 
 <template>
   <div class="sidebar" :class="{ 'active-sidebar': nav }">
     <div>
       <div class="sidebar-header">
-        <NuxtLink to="/">
-          <nuxt-img
-            provider="cloudinary"
-            :src="$colorMode.value === 'dark' ? '/nb-light.svg' : '/nb-dark.svg'"
-            alt="logo"
-            fit="inside"
-            height="60"
-            width="60"
-          />
+        <NuxtLink to="/" class="flex items-center gap-1">
+          <img src="~/assets/svg/logo.svg" alt="logo" height="30" width="30" />
+          <span class="font-bold text-2xl">Taaktracker</span>
         </NuxtLink>
       </div>
       <div class="sidebar-content">
@@ -67,6 +62,12 @@ defineProps<{ nav: boolean }>();
                 </span>
               </span>
             </span>
+            <div @click="signOut" class="flex items-center gap-2 cursor-pointer mt-5">
+              <div class="sidebar--logout-icon">
+                <Icon name="mdi:logout" width="20" />
+              </div>
+              <p class="text-xs text-style">Log out</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -85,7 +86,7 @@ defineProps<{ nav: boolean }>();
 }
 
 .sidebar-header {
-  @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center
+  @apply sticky top-0 w-full h-[var(--sidebar-height)] shadow-sm p-4 flex justify-between items-center border-b border-b-bg-secondary/[0.2] dark:border-b-bg-primary/[0.2]
   bg-sidebar-primary 
   /* DARK MODE */
   dark:bg-sidebar-secondary;
@@ -123,5 +124,9 @@ defineProps<{ nav: boolean }>();
 
 .sidebar--inactive-collapse {
   @apply transition-[max-height] max-h-0 duration-300 ease-out overflow-hidden;
+}
+
+.sidebar--logout-icon {
+  @apply w-[50px] h-[50px] rounded-full bg-link-primary dark:bg-link-secondary flex justify-center items-center text-style;
 }
 </style>
