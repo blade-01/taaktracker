@@ -11,38 +11,7 @@ export default () => {
     {
       name: "Dashboard",
       icon: "view-dashboard",
-      route: "/dashboard"
-    },
-    {
-      name: "Button Samples",
-      icon: "gesture-tap-button",
-      route: "/dashboard/button"
-    },
-    {
-      name: "Input Samples",
-      icon: "form-select",
-      route: "/dashboard/input"
-    },
-    {
-      name: "Modal Samples",
-      icon: "help-box-multiple-outline",
-      route: "/dashboard/modal"
-    },
-    {
-      name: "Table Samples",
-      icon: "table",
-      route: "/dashboard/table"
-    },
-    {
-      name: "Others",
-      icon: "alien",
-      show: false,
-      sub: [
-        {
-          name: "Logout",
-          route: "/"
-        }
-      ]
+      route: "/"
     }
   ]);
 
