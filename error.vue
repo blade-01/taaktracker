@@ -24,14 +24,9 @@ const { setTheme } = useTheme();
       />
     </div>
     <div>
-      <img src="~/assets/svg/404-dark.svg" alt="404" v-if="$colorMode.value === 'dark'" />
-      <img
-        src="~/assets/svg/404-light.svg"
-        alt="404"
-        v-if="$colorMode.value === 'light'"
-      />
+      <DisplayEmpty />
     </div>
-    <div class="flex flex-col gap-5 items-center mt-7 text-style">
+    <div class="flex flex-col gap-5 items-center text-style">
       <p class="text-3xl lg:text-5xl font-bold">Oops!</p>
       <p class="text-base md:text-lg">
         We can't seem to find the page you are looking for.
