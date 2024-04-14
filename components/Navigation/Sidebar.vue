@@ -62,14 +62,17 @@ const { signOut } = useAuth();
                 </span>
               </span>
             </span>
-            <div @click="signOut" class="flex items-center gap-2 cursor-pointer mt-5">
-              <div class="sidebar--logout-icon">
-                <Icon name="mdi:logout" width="20" />
-              </div>
-              <p class="text-xs text-style">Log out</p>
-            </div>
           </li>
         </ul>
+        <div
+          @click="signOut"
+          class="flex items-center gap-2 cursor-pointer mt-5 absolute bottom-5"
+        >
+          <div class="sidebar--logout-icon">
+            <Icon name="mdi:logout" width="20" />
+          </div>
+          <p class="text-xs text-style">Log out</p>
+        </div>
       </div>
     </div>
   </div>
@@ -77,7 +80,7 @@ const { signOut } = useAuth();
 
 <style scoped>
 .sidebar {
-  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-500 ease-out
+  @apply shadow-sm z-40 fixed top-0 md:left-0 -left-full transition-[left] duration-500 ease-out border-r border-r-bg-secondary/[0.2] dark:border-r-bg-primary/[0.2]
   bg-sidebar-primary 
   /* DARK MODE */
   dark:bg-sidebar-secondary
