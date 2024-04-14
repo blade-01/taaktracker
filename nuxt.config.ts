@@ -2,16 +2,62 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      titleTemplate: "%s | NuxtBoost",
-      title: "NuxtBoost",
+      titleTemplate: "%s | Taaktracker",
+      title: "Taaktracker",
       meta: [
         { charset: "utf-8" },
         {
           name: "description",
-          content:
-            "Boost your productivity with NuxtBoost - work smarter, not harder."
+          content: "Your Task Tracker, Your Rules 🚀"
         },
-        { name: "theme-color", content: "#1e1e2e" }
+        {
+          property: "og:type",
+          content: "website"
+        },
+        {
+          property: "og:url",
+          content: "https://conversar.vercel.app"
+        },
+        {
+          property: "og:title",
+          content: "Conversar | Your Task Tracker, Your Rules 🚀"
+        },
+        {
+          property: "og:description",
+          content: "Your Task Tracker, Your Rules 🚀"
+        },
+        {
+          property: "og:image",
+          content:
+            "https://res.cloudinary.com/bladencove/image/upload/v1711707623/site_logos/logo_chlj5u.svg"
+        },
+        {
+          property: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          property: "twitter:url",
+          content: "https://conversar.vercel.app"
+        },
+        {
+          property: "twitter:title",
+          content: "Conversar | Your Task Tracker, Your Rules 🚀"
+        },
+        {
+          property: "twitter:description",
+          content: "Your Task Tracker, Your Rules 🚀"
+        },
+        {
+          property: "twitter:image",
+          content:
+            "https://res.cloudinary.com/bladencove/image/upload/v1711707623/site_logos/logo_chlj5u.svg"
+        },
+        { name: "theme-color", content: "#1e1e2e" },
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+        }
       ],
       link: [{ rel: "icon", href: "/favicon.ico" }]
     }
@@ -38,7 +84,8 @@ export default defineNuxtConfig({
    */
   runtimeConfig: {
     public: {
-      baseURL: ""
+      apiKey: process.env.SUPABASE_KEY,
+      baseURL: process.env.SUPABASE_URL
     }
   },
   /**
@@ -57,7 +104,8 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
     "vue3-carousel-nuxt",
     "@nuxt/devtools",
-    "@nuxtjs/color-mode"
+    "@nuxtjs/color-mode",
+    "@nuxtjs/supabase"
   ],
   /**
    * Pinia configuration
@@ -107,6 +155,18 @@ export default defineNuxtConfig({
   image: {
     cloudinary: {
       baseURL: "https://res.cloudinary.com/bladencove/image/upload/RC"
+    }
+  },
+  /**
+   * Supabase Configuration
+   */
+  supabase: {
+    redirectOptions: {
+      login: "/auth",
+      callback: "/",
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false
     }
   }
 });
