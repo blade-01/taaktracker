@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import UiBtn from "~/components/Ui/Btn/index.vue";
 import useTheme from "~/composables/useTheme";
+defineProps<{
+  title: string | undefined;
+}>();
 defineEmits(["toggleSidebar"]);
 const { setTheme } = useTheme();
 const { tooltipStyle } = usePvStyle();
@@ -19,23 +22,26 @@ const { user } = useAuth();
 
 <template>
   <div
-    class="flex items-center main sticky top-0 w-full h-[var(--sidebar-height)] z-50 shadow-sm bg-bg-primary dark:bg-bg-secondary border-b border-b-bg-secondary/[0.2] dark:border-b-bg-primary/[0.2]"
+    class="flex items-center main fixed top-0 w-full h-[var(--sidebar-height)] z-50 shadow-sm bg-bg-primary dark:bg-bg-secondary border-b border-b-bg-secondary/[0.2] dark:border-b-bg-primary/[0.2] md:w-[calc(100%-var(--sidebar-width-md))] lg:w-[calc(100%-var(--sidebar-width-lg))] 2xl:w-[calc(100%-var(--sidebar-width-2xl))] transition-all ease-out duration-500"
+    :class="{
+      'md:!w-full': nav,
+    }"
   >
     <div class="p-4 w-full">
-      <div class="hidden md:block absolute top-5 -left-[15px] z-50">
+      <div class="hidden md:block absolute top-4 -left-3.5 z-50">
         <UiBtn
           v-tooltip="{
             value: `${nav ? 'collapse [' : 'expand ['}`,
             pt: tooltipStyle,
           }"
           ref="sidebarToggler"
-          class="!py-0 !bg-transparent border border-gray-300 rounded-full !h-6 !w-6 !pl-5 !pr-2 !flex !justify-center !items-center"
+          class="!p-2 !bg-sidebar-primary dark:!bg-sidebar-secondary border border-bg-secondary/[0.2] dark:border-bg-primary/[0.2] rounded-full !h-7 !w-7 !flex !justify-center !items-center"
           @click="toggleSidebar"
         >
           <Icon
             :name="nav ? 'mdi:chevron-right' : 'mdi:chevron-left'"
             class="!flex"
-            size="22"
+            size="26"
           ></Icon>
         </UiBtn>
       </div>
@@ -52,9 +58,13 @@ const { user } = useAuth();
           >
             <Icon name="mdi:menu" class="text-3xl font-bold cursor-pointer"></Icon>
           </UiBtn>
-          <p>Welcome, Blade!</p>
+          <p class="text-style text-2xl font-semibold">
+            {{ truncateString(title || "", 12) }}
+          </p>
         </div>
-        <div>&nbsp;</div>
+        <p class="text-style text-2xl font-semibold hidden md:flex pl-5">
+          {{ truncateString(title || "", 20) }}
+        </p>
         <div class="flex items-center gap-4">
           <Icon
             :name="
