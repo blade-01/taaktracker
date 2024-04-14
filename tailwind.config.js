@@ -10,83 +10,82 @@
     extend: {
       colors: {
         btn: {
-          primary: '#e3e3e3',
-          secondary: '#29292c',
+            primary: '#FD5D03',
+            secondary: '#29292c',
         },
         text: {
-          primary: '#040404', 
-          secondary: 'rgba(255,255,255,0.6)', 
-          icon: "#4F4F4F", 
-          file: "#BDBDBD" 
+            primary: '#040404',
+            secondary: '#ffffff',
+            icon: "#4F4F4F",
+            file: "#BDBDBD"
         },
         link: {
-          primary: "#EEEEEE", 
-          secondary: "#27292D",
+            primary: "#EEEEEE",
+            secondary: "#27292D",
         },
         label: {
-          primary: "#424242", 
-          secondary: "#FFFFFF", 
+            primary: "#424242",
+            secondary: "#FFFFFF",
         },
         placeholder: {
-          primary: "rgba(51,51,51,0.54)", 
-          secondary: "rgba(255,255,255,0.54)", 
+            primary: "rgba(51,51,51,0.54)",
+            secondary: "rgba(255,255,255,0.54)",
         },
         disabled: {
-          primary: "#E0E0E0", 
-          secondary: "#424242", 
+            primary: "#E0E0E0",
+            secondary: "#424242",
         },
         focus: {
-          primary: "#374151", 
-          secondary: "#1E1E1E", 
+            primary: "#374151",
+            secondary: "#1E1E1E",
         },
         border: {
-          primary: '#EEEEEEC', 
-          secondary: '#3A3A3A', 
+            primary: '#EEEEEEC',
+            secondary: '#3A3A3A',
         },
         bg: {
-          primary: '#FFFFFF', 
-          secondary: '#121316', 
+            primary: '#FFFFFF',
+            secondary: '#1E1F21',
         },
         hover: {
-          primary: "#00000042", 
-          secondary: "#00000042", 
+            primary: "#00000042",
+            secondary: "#00000042",
         },
         checkbox: {
-          primary: '#bbbbbbb3', 
-          secondary: '#64748b', 
+            primary: '#bbbbbbb3',
+            secondary: '#64748b',
         },
         accent: {
-          primary: '#27293D', 
-          secondary: '#64748b', 
+            primary: '#27293D',
+            secondary: '#64748b',
         },
         sidebar: {
-          primary: "#fafafa",
-          secondary: "#1A1B1E",
+            primary: "#fafafa",
+            secondary: "#2E2E30",
         },
         input: {
-          primary: "#eeeeee",
-          secondary: "#29292c"
+            primary: "#eeeeee",
+            secondary: "#29292c"
         },
         scroll: {
-          track: "#f9fafb",
-          trackSec: "#27293D",
-          thumb: "#d8d8d8",
-          thumbSec: "#fefefe"
+            track: "#f9fafb",
+            trackSec: "#27293D",
+            thumb: "#d8d8d8",
+            thumbSec: "#fefefe"
         },
         filter: {
-          primary: "#d8d8d8ab",
-          secondary: "#29292ce9"
+            primary: "#d8d8d8ab",
+            secondary: "#29292ce9"
         },
         selected: {
-          primary: "#d8d8d8d4",
-          secondary: "#19191b",
-          hover: "#d8d8d8ab",
-          hoverSec: "#29292ce9"
+            primary: "#d8d8d8d4",
+            secondary: "#19191b",
+            hover: "#d8d8d8ab",
+            hoverSec: "#29292ce9"
         }
-      },      
-      fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        urbanist: ['Urbanist', 'sans-serif']
+    },      
+    fontFamily: {
+        satoshi: ['Satoshi', 'sans-serif']
       },
       fontSize: {
         nl: ['56px', '64px']
