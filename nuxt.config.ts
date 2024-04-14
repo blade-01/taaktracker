@@ -16,11 +16,11 @@ export default defineNuxtConfig({
         },
         {
           property: "og:url",
-          content: "https://conversar.vercel.app"
+          content: "https://taaktracker.vercel.app"
         },
         {
           property: "og:title",
-          content: "Conversar | Your Task Tracker, Your Rules 🚀"
+          content: "Taaktracker | Your Task Tracker, Your Rules 🚀"
         },
         {
           property: "og:description",
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         {
           property: "og:image",
           content:
-            "https://res.cloudinary.com/bladencove/image/upload/v1711707623/site_logos/logo_chlj5u.svg"
+            "https://res.cloudinary.com/bladencove/image/upload/v1713129428/logo_zlxfff.svg"
         },
         {
           property: "twitter:card",
@@ -37,11 +37,11 @@ export default defineNuxtConfig({
         },
         {
           property: "twitter:url",
-          content: "https://conversar.vercel.app"
+          content: "https://taaktracker.vercel.app"
         },
         {
           property: "twitter:title",
-          content: "Conversar | Your Task Tracker, Your Rules 🚀"
+          content: "Taaktracker | Your Task Tracker, Your Rules 🚀"
         },
         {
           property: "twitter:description",
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
         {
           property: "twitter:image",
           content:
-            "https://res.cloudinary.com/bladencove/image/upload/v1711707623/site_logos/logo_chlj5u.svg"
+            "https://res.cloudinary.com/bladencove/image/upload/v1713129428/logo_zlxfff.svg"
         },
         { name: "theme-color", content: "#1e1e2e" },
         {
@@ -71,7 +71,8 @@ export default defineNuxtConfig({
   plugins: [
     "~/plugins/directives.client.ts",
     "~/plugins/vue-tel-input.ts",
-    "~/plugins/primevue.ts"
+    "~/plugins/primevue.ts",
+    "~/plugins/V3Lottie.client.ts"
   ],
   build: {
     transpile: ["primevue"]
@@ -105,7 +106,8 @@ export default defineNuxtConfig({
     "vue3-carousel-nuxt",
     "@nuxt/devtools",
     "@nuxtjs/color-mode",
-    "@nuxtjs/supabase"
+    "@nuxtjs/supabase",
+    "@formkit/auto-animate/nuxt"
   ],
   /**
    * Pinia configuration
