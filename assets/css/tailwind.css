@@ -18,11 +18,9 @@
     --sidebar-height: 60px;
     --sidebar-width: 85%;
     --sidebar-width-md: 40%;
-    --sidebar-width-lg: 360px;
-    --sidebar-width-xl: 260px;
+    --sidebar-width-lg: 300px;
+    --sidebar-width-xl: 400px;
     --sidebar-width-2xl: 400px;
-    --chat-width-lg: 620px;
-    --chat-width-2xl: 700px;
   }
 
   *,
