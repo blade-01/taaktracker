@@ -6,7 +6,9 @@ const { user } = useAuth();
 </script>
 
 <template>
-  <div>Hello there</div>
+  <DashboardWrapper title="Hello">
+    <DisplayLoader />
+  </DashboardWrapper>
 </template>
 
 <style scoped></style>
