@@ -2,9 +2,9 @@
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
     <client-only>
       <Vue3Lottie
-        animationLink="https://res.cloudinary.com/bladencove/raw/upload/v1710981038/loading-lottie_dicrfr.json"
-        :height="100"
-        :width="100"
+        animationLink="https://lottie.host/d1c2a4c2-a5aa-4313-9ef5-2cf6138e9e0e/E2MbPgJMMk.json"
+        :height="200"
+        :width="200"
       />
     </client-only>
   </div>
