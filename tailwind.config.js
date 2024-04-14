@@ -21,7 +21,7 @@
         },
         link: {
             primary: "#EEEEEE",
-            secondary: "#27292D",
+            secondary: "#3D3E40",
         },
         label: {
             primary: "#424242",
